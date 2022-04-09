@@ -34,7 +34,7 @@ class EmployeeController extends AbstractController {
     this.router.post(
       `${this.path}`,
       validationMiddleware(CreateEmployeeDto),
-       //authorize(["admin"]),
+       authorize(["admin"]),
        this.createEmployee
     );
     this.router.put(
